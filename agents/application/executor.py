@@ -32,7 +32,7 @@ class Executor:
     def __init__(self, default_model='gpt-3.5-turbo-16k') -> None:
         load_dotenv()
         max_token_model = {'gpt-3.5-turbo-16k':15000, 'gpt-4-1106-preview':95000}
-        self.token_limit = max_token_model.get(default_model)
+        self.token_limit = max_token_model.get(default_model, 15000)
         self.prompter = Prompter()
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
         self.llm = ChatOpenAI(

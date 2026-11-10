@@ -38,7 +38,7 @@ class News:
 
     def get_top_articles_for_market(self, market_object: dict) -> "list[Article]":
         return self.API.get_top_headlines(
-            language="en", country="usa", q=market_object["description"]
+            language="en", country="us", q=market_object["description"]
         )
 
     def get_articles_for_options(
